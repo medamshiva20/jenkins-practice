@@ -5,9 +5,11 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
-                sh 'ls -ltrh'
-                sh 'pwd'
-                sh 'touch /tmp/file1'
+                sh '''
+                ls -ltrh
+                pwd
+                touch /tmp/file2
+                '''
             }
         }
         stage('Test') {
