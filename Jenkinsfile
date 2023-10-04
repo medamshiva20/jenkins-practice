@@ -5,6 +5,9 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
+                sh 'ls -ltrh'
+                sh 'pwd'
+                sh 'touch /tmp/file1'
             }
         }
         stage('Test') {
@@ -15,7 +18,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploying....'
-                error 'This is failed'
+                //error 'This is failed'
             }
         }
     }
