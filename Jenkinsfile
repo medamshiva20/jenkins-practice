@@ -9,6 +9,7 @@ pipeline {
                 ls -ltrh
                 pwd
                 touch /tmp/file2
+                echo 'This is for GitHub hook for push event'
                 '''
             }
         }
