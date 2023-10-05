@@ -1,6 +1,11 @@
 pipeline {
     agent { node { label 'agent1' } }
-
+    options{
+        timeout(time: 1, unit: 'HOURS') 
+    }
+    environment{
+        USER = 'sivamedam'
+    }
     stages {
         stage('Build') {
             steps {
@@ -8,8 +13,8 @@ pipeline {
                 sh '''
                 ls -ltrh
                 pwd
-                touch /tmp/file2
                 echo 'This is for GitHub hook for push event'
+                printenv
                 '''
             }
         }
