@@ -41,6 +41,9 @@ pipeline {
             environment {
                 AUTH = Credentails('ssh-auth')
             }
+            steps{
+                sh 'printenv'
+            }
         }
     }
     post { 
