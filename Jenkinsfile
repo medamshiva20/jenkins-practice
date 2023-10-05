@@ -8,6 +8,7 @@ pipeline {
     //      }
     environment{
         USER = 'sivamedam'
+        branch = 'main'
     }
         parameters {
         string(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
@@ -73,6 +74,14 @@ pipeline {
                 echo "Hello, ${PERSON}, nice to meet you."
             }
     }
+    stage('PROD Deploy') {
+            when {
+                branch 'main'
+            }
+            steps {
+                echo 'Deploying to PROD'
+            }
+        }
     }
     post { 
         always { 
