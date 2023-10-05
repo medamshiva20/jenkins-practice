@@ -36,13 +36,25 @@ pipeline {
                 //error 'This is failed'
             }
         }
-        stage('credentails')
-        {
+        stage('Example'){
             environment {
                 AUTH = credentails('ssh-auth')
             }
             steps{
                 sh 'printenv'
+            }
+        }
+        stage('Params') {
+            steps {
+                echo "Hello ${params.PERSON}"
+
+                echo "Biography: ${params.BIOGRAPHY}"
+
+                echo "Toggle: ${params.TOGGLE}"
+
+                echo "Choice: ${params.CHOICE}"
+
+                echo "Password: ${params.PASSWORD}"
             }
         }
     }
