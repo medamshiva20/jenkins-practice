@@ -73,6 +73,7 @@ pipeline {
                 echo "Hello, ${PERSON}, nice to meet you."
             }
     }
+    }
     post { 
         always { 
             echo 'I will always run wether job is success or not'
@@ -84,5 +85,4 @@ pipeline {
             echo 'I will run when job failure'
         }
     }
-}
 }
