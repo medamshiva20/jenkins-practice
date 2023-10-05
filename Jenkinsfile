@@ -36,10 +36,10 @@ pipeline {
                 //error 'This is failed'
             }
         }
-        stage('Credentails')
+        stage('credentails')
         {
             environment {
-                AUTH = Credentails('ssh-auth')
+                AUTH = credentails('ssh-auth')
             }
             steps{
                 sh 'printenv'
