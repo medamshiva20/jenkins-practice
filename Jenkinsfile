@@ -36,6 +36,12 @@ pipeline {
                 //error 'This is failed'
             }
         }
+        stage('Credentails')
+        {
+            environment {
+                AUTH = Credentails('ssh-auth')
+            }
+        }
     }
     post { 
         always { 
