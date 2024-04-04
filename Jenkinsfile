@@ -5,10 +5,10 @@ pipeline {
             {
                 steps{
                      echo "Building"
-                     sh '''
-                     ls -ltrh
-                     pwd
-                     '''
+                  sh'''
+                    ls -ltrh
+                    pwd
+                  '''
                 }
             }
             stage('Test'){
