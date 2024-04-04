@@ -8,6 +8,7 @@ pipeline {
                   sh'''
                     ls -ltrh
                     pwd
+                    echo "Adding webhook concept"
                   '''
                 }
             }
