@@ -20,7 +20,7 @@ pipeline {
             stage('Deploy'){
                 steps{
                     echo "Deploy"
-                    error "This job is failed"
+                    
                 }
             }
         }
