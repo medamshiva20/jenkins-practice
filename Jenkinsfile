@@ -15,6 +15,7 @@ pipeline {
             stage('Deploy'){
                 steps{
                     echo "Deploy"
+                    echo "This job is failed"
                 }
             }
         }
