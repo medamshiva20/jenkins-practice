@@ -18,4 +18,15 @@ pipeline {
                 }
             }
         }
+        post {
+            always {
+                echo "I will run the jon always whether it is success or failure"
+            }
+            success {
+                echo "I will run the job if it is only success"
+            }
+            failure {
+                echo "I will send the status if the job only fails"
+            }
+        }
 }
