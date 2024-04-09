@@ -1,5 +1,11 @@
 pipeline {
     agent { node {label 'label1'} }
+    options {
+     timeout(time: 1, unit: 'HOURS')
+    }
+    environment {
+        USER = 'siva'
+    }
         stages {
             stage('Build')
             {
@@ -20,9 +26,18 @@ pipeline {
             stage('Deploy'){
                 steps{
                     echo "Deploy"
+                    error "This is error"
                     
                 }
             }
+            stage('Env') {
+            environment { 
+                AUTH = credentials('ssh-auth')
+            }
+            steps {
+                sh 'printenv'
+            }
+        }
         }
         post {
             always {
