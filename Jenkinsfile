@@ -15,6 +15,7 @@ pipeline {
                     ls -ltrh
                     pwd
                     echo "Adding webhook concept in github"
+                    printenv
                   '''
                 }
             }
