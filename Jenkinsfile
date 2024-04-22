@@ -3,6 +3,9 @@ pipeline {
     options {
      timeout(time: 1, unit: 'HOURS')
     }
+    triggers{
+        cron('* * * * *')
+    }
     environment {
         USER = 'siva'
     }
@@ -62,7 +65,7 @@ pipeline {
         }
         post {
             always {
-                echo "I will run the jon always whether it is success or failure"
+                echo "I will run the job always whether it is success or failure"
             }
             success {
                 echo "I will run the job if it is only success"
