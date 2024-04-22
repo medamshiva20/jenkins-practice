@@ -78,10 +78,12 @@ pipeline {
         stage('Prod Deploy')
         {
             when {
-                branch 'main'
+               environemnt name: 'USER', value: 'siva'
             }
             steps{
-                echo "Deploying to Prod"
+                sh '''
+                    echo "Deploying to Prod"
+                   '''
             }
         }
     }
