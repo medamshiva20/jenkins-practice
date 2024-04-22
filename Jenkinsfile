@@ -78,7 +78,7 @@ pipeline {
         stage('Prod Deploy')
         {
             when {
-               environemnt name: 'USER', value: 'siva'
+               environment name: 'USER', value: 'siva'
             }
             steps{
                 sh '''
